@@ -27,3 +27,6 @@
     justify-content: center;
     border: solid;
 }
+.currentT{
+    display: block;
+}
