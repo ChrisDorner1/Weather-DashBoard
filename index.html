@@ -14,25 +14,42 @@
 
     <div class="searchBar">
         <h2>Search for your city:</h2>
-        <input id="city" type="text" placeholder="ex: Alverado" name="search" >
-        <button class="searchBtn" type="submit">Search</button>
+        <input class="col-3.5 d-inline" id="city" type="text" placeholder="ex: Alverado" name="search" >
+        <button class="searchBtn d-inline" type="submit">Search</button>
     </div>
-        <div class="current">Today
-            <ul class="currentT"></ul>
+
+    <div>
+        <h2 class="prev"></h2>
+    </div>
+    <section class=" d-none">
+        <div>
+            <div class="row d-flex justify-content-center">
+                <div class="card" style="width: 16rem">
+                    <h2>Todays Weather</h2>
+                    <h5 class="card-title"></h5>
+                    <h4 class="todays"></h4>
+                    <img class="todaysI">
+                    <div class="card-body">
+                        <p class="card-text todaysT"></p>
+                    </div>
+                </div>
+
         </div>
+
+        <div> <h2 class="d-flex justify-content-center">5-day Forecast:</h2></div>
     <div class="row d-flex justify-content-center">
         <div class="card" style="width: 12rem">
-            <h5 class="card-title tomorrow"></h5>
-            <h4 class="currentT">asdf</h4>
-            <!-- <img src="https://i.kym-cdn.com/entries/icons/original/000/022/134/elmo.jpg" alt="Elmo on fire"> -->
+            <h5 class="card-title"></h5>
+            <h4 class="currentT"></h4>
+            <img class="pic1" alt="Weather icon">
             <div class="card-body">
-                <p class="card-text">asdf</p>
+                <p class="card-text tomorrow"></p>
             </div>
         </div>
         
         <div class="card" style="width: 12rem">
             <h5 class="card-title"></h5>
-            <!-- <img src="https://i.kym-cdn.com/entries/icons/original/000/022/134/elmo.jpg" alt="Elmo on fire"> -->
+            <img class="pic2" alt="Weather icon">
             <div class="card-body">
                 <p class="card-text nextT"></p>
             </div>
@@ -40,7 +57,7 @@
         
         <div class="card" style="width: 12rem">
             <h5 class="card-title"></h5>
-            <!-- <img src="https://i.kym-cdn.com/entries/icons/original/000/022/134/elmo.jpg" alt="Elmo on fire"> -->
+            <img class="pic3" alt="Weather icon">
             <div class="card-body">
                 <p class="card-text nextT2"></p>
             </div>
@@ -48,7 +65,7 @@
         
         <div class="card" style="width: 12rem">
             <h5 class="card-title"></h5>
-            <!-- <img src="https://i.kym-cdn.com/entries/icons/original/000/022/134/elmo.jpg" alt="Elmo on fire"> -->
+            <img class="pic4" alt="Weather icon">
             <div class="card-body">
                 <p class="card-text nextT3"></p>
             </div>
@@ -56,12 +73,13 @@
         
         <div class="card" style="width: 12rem">
             <h5 class="card-title"></h5>
-            <!-- <img src="https://i.kym-cdn.com/entries/icons/original/000/022/134/elmo.jpg" alt="Elmo on fire"> -->
+            <img class="pic5" alt="Weather icon">
             <div class="card-body">
                 <p class="card-text nextT4"></p>
             </div>
         </div>
     </div>
+</section>
     <div class="storedCities">
         
     </div>
