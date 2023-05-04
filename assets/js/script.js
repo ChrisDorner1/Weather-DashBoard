@@ -59,7 +59,7 @@ function input(cityName) {
     if (cityName == "") {
         alert("Please enter the city you want to see.")
     } else {
-        var url= "http://api.openweathermap.org/geo/1.0/direct?q=" + cityName + "&limit=&appid=e19e2b263fc9d0529488931d1e9bdaf5"
+        var url= "https://api.openweathermap.org/geo/1.0/direct?q=" + cityName + "&limit=&appid=e19e2b263fc9d0529488931d1e9bdaf5"
         fetch(url)
         .then(function(response) {
             return response.json()
