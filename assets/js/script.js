@@ -17,16 +17,40 @@ var pic5 = document.querySelector(".pic5")
 var todays = document.querySelector(".todays")
 var todaysImg = document.querySelector(".todaysI")
 
-function saved() {
-    localStorage.setItem("stored", )
+storedCities.addEventListener("click", function(event){
+    input(event.target.textContent)
+})
+
+var storedArr = localStorage.getItem("stored")
+if (storedArr) {
+    storedArr = JSON.parse(storedArr)
+    displayStoredCities()
+} else {
+    storedArr = []
+}
+
+function displayStoredCities() {
+    storedCities.innerHTML = ""
+    for (var i = 0; i < storedArr.length; i++) {
+       var savedCity = document.createElement("div")
+       savedCity.textContent = storedArr[i]
+       storedCities.appendChild(savedCity)
+    }
+}
+
+function saved(cityName) {
+    storedArr.push(cityName)
+    localStorage.setItem("stored", JSON.stringify(storedArr))
+    displayStoredCities()
 }
 
 searchBtn.addEventListener("click", function(){
-    input()
+    var cityName = document.getElementById("city").value
+    input(cityName)
+    saved(cityName)
 })
 
-function input() {
-    var cityName = document.getElementById("city").value
+function input(cityName) {
     if (cityName == "") {
         alert("Please enter the city you want to see.")
     } else {
@@ -44,7 +68,6 @@ function input() {
                 return response.json()
             })
             .then(function(data){
-                console.log(data)
                 set.className = "d-inline"
                 tomorrow.textContent = "Temp: " + data.list[0].main.temp + " Deg F " + " Wind: " + data.list[0].wind.speed + " MPH " + " Humidity: " + data.list[0].main.humidity + " %"
                 pic1.setAttribute("src", "http://openweathermap.org/img/wn/" + data.list[0].weather[0].icon + "@2x.png") 
