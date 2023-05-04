@@ -17,10 +17,12 @@ var pic5 = document.querySelector(".pic5")
 var todays = document.querySelector(".todays")
 var todaysImg = document.querySelector(".todaysI")
 
+// uses stored cities for search
 storedCities.addEventListener("click", function(event){
     input(event.target.textContent)
 })
 
+//pull stored searches and places them below search bar
 var storedArr = localStorage.getItem("stored")
 if (storedArr) {
     storedArr = JSON.parse(storedArr)
@@ -38,18 +40,21 @@ function displayStoredCities() {
     }
 }
 
+//saves previously searched cities
 function saved(cityName) {
     storedArr.push(cityName)
     localStorage.setItem("stored", JSON.stringify(storedArr))
     displayStoredCities()
 }
 
+//adds listener to search button to preform search 
 searchBtn.addEventListener("click", function(){
     var cityName = document.getElementById("city").value
     input(cityName)
     saved(cityName)
 })
 
+//search and display content function
 function input(cityName) {
     if (cityName == "") {
         alert("Please enter the city you want to see.")
